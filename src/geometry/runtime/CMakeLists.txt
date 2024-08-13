@@ -7,6 +7,6 @@ target_compile_definitions(ozz_geometry PRIVATE $<$<BOOL:${BUILD_SHARED_LIBS}>:O
 target_link_libraries(ozz_geometry ozz_base)
 set_target_properties(ozz_geometry PROPERTIES FOLDER "ozz")
 
-install(TARGETS ozz_geometry DESTINATION lib)
+install(TARGETS ozz_geometry EXPORT ${EXPORT_NAME} DESTINATION lib)
 
 fuse_target("ozz_geometry")

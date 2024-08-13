@@ -11,8 +11,18 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Activates unit tests
 enable_testing()
 
-# Includes ozz-animation as a sub directory, using an arbitrary "ozz-animation/" binary output folder.
-add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/../.." ozz-animation/)
+if(TEST_FETCHCONTENT)
+  # Includes ozz-animation using FetchContent
+  include(FetchContent)
+  FetchContent_Declare(ozz-animation
+    GIT_REPOSITORY https://github.com/guillaumeblanc/ozz-animation.git
+    GIT_TAG develop
+  )
+  FetchContent_MakeAvailable(ozz-animation)
+else()
+  # Includes ozz-animation as a sub directory, using an arbitrary "ozz-animation/" binary output folder.
+  add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/../.." ozz-animation/)
+endif()
 
 # Then link with ozz libraries as any other cmake target.
 add_executable(test_sub_project

@@ -8,6 +8,6 @@ target_compile_definitions(ozz_options PRIVATE $<$<BOOL:${BUILD_SHARED_LIBS}>:OZ
   
 set_target_properties(ozz_options PROPERTIES FOLDER "ozz")
 
-install(TARGETS ozz_options DESTINATION lib)
+install(TARGETS ozz_options EXPORT ${EXPORT_NAME} DESTINATION lib)
 
 fuse_target("ozz_options")

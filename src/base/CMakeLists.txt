@@ -69,7 +69,7 @@ target_include_directories(ozz_base PUBLIC
 
 set_target_properties(ozz_base PROPERTIES FOLDER "ozz")
 
-install(TARGETS ozz_base DESTINATION lib)
+install(TARGETS ozz_base EXPORT ${EXPORT_NAME} DESTINATION lib)
 
 fuse_target("ozz_base")
 

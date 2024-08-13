@@ -31,7 +31,7 @@ target_link_libraries(ozz_animation_offline ozz_animation)
 
 set_target_properties(ozz_animation_offline PROPERTIES FOLDER "ozz")
 
-install(TARGETS ozz_animation_offline DESTINATION lib)
+install(TARGETS ozz_animation_offline EXPORT ${EXPORT_NAME} DESTINATION lib)
 
 fuse_target("ozz_animation_offline")
 

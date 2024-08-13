@@ -11,4 +11,4 @@ target_copy_shared_libraries(gltf2ozz)
 set_target_properties(gltf2ozz
   PROPERTIES FOLDER "ozz/tools")
 
-install(TARGETS gltf2ozz DESTINATION bin/tools)
+install(TARGETS gltf2ozz EXPORT ${EXPORT_NAME} DESTINATION bin/tools)

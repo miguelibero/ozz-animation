@@ -27,7 +27,7 @@ target_link_libraries(ozz_animation_tools
 set_target_properties(ozz_animation_tools
   PROPERTIES FOLDER "ozz/tools")
 
-install(TARGETS ozz_animation_tools DESTINATION lib)
+install(TARGETS ozz_animation_tools EXPORT ${EXPORT_NAME} DESTINATION lib)
 
 fuse_target("ozz_animation_tools")
 
